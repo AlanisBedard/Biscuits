@@ -1,0 +1,49 @@
+/* ==========================================================================
+   button / component
+   ========================================================================== */
+
+.button {
+    font-size: var(--font-size-button);
+    color: var(--color-primary);
+    border: none;
+
+    &:hover {
+        color: var(--color-primary);
+        text-decoration: none;
+    }
+
+    @media screen and (max-width: $breakpoint-md) {
+        font-size: 1rem;
+    }
+}
+
+.button__grand {
+    background-color: var(--color-action-primary);
+    padding: 20px 70px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background-color: var(--color-action-primary-light);
+        border-radius: 20px;
+    }
+
+    @media screen and (max-width: $breakpoint-md) {
+        padding: 20px 40px;
+    }
+
+    @media screen and (max-width: $breakpoint-xs) {
+        padding: 20px 20px;
+    }
+}
+
+.button__petit {
+    font-size: var(--font-size-button-small);
+    background-color: var(--color-secondary);
+    padding: 8px 28px;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+
+    &:hover {
+        border-radius: 20px;
+    }
+}

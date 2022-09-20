@@ -1,0 +1,404 @@
+.formulaire {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-xl) 0;
+    color: var(--color-secondary);
+
+    @media screen and (max-width: $breakpoint-sm) {
+        padding: var(--spacing-lg) 0;
+    }
+
+    h3 {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .form {
+        --input-radius: 3px;
+        --input-padding: 1em;
+
+        fieldset {
+            border: none;
+            padding: 0;
+        }
+    }
+
+    .form__footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 45px;
+    }
+
+    .grid {
+        display: grid;
+        gap: calc(var(--spacing-md) * 1.6) var(--spacing-md);
+        grid-template-columns: 1fr;
+
+        @media screen and (min-width: $breakpoint-md) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-lg) var(--spacing-md);
+        }
+    }
+
+    .form__complet + .form__complet {
+        padding: 80px 0;
+    }
+
+    .grid-layout {
+        grid-template-columns: repeat(4, 1fr);
+
+        .input:nth-child(-n + 2) {
+            grid-column: span 2;
+        }
+
+        .input:nth-last-child(-n + 2) {
+            grid-column: span 4;
+        }
+
+        @media screen and (max-width: $breakpoint-lg) {
+            .input {
+                grid-column: span 2;
+            }
+        }
+
+        @media screen and (max-width: 830px) {
+            .input,
+            .input:nth-child(-n + 2) {
+                grid-column: span 4;
+            }
+        }
+    }
+
+    .input {
+        position: relative;
+    }
+
+    input {
+        &:valid,
+        &:invalid {
+            .input__label {
+                top: -10%;
+                left: 0;
+            }
+        }
+    }
+    .input__label {
+        display: block;
+        color: var(--color-neutral-disable);
+        position: absolute;
+        top: 20%;
+        left: 0;
+        z-index: 3;
+        transition: 0.2s;
+        width: 100%;
+
+        @media screen and (max-width: 550px) {
+            &:not(.label__checkbox) {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+    .input__element {
+        border-radius: var(--input-radius);
+        background-color: var(--color-primary);
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+        outline: none;
+        padding: var(--input-padding) var(--spacing-xs) 0 0;
+        width: 100%;
+        border-bottom: 3px solid var(--color-secondary);
+
+        transition: 0.2s;
+
+        //Ecrase les styles des navigateurs
+        &:-webkit-autofill,
+        &:-webkit-autofill:active {
+            -webkit-box-shadow: inset 0 0 0 30px var(--color-white) !important;
+            -webkit-text-fill-color: inherit !important;
+        }
+
+        &:focus + .input__label {
+            &:not(.not__floating) {
+                top: -30%;
+                left: 0;
+                font-size: var(--font-size-legende);
+                color: var(--color-action-secondary);
+                opacity: 0.4;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+                -webkit-box-shadow: inset 0 0 0 30px var(--color-primary) !important;
+            }
+        }
+
+        &:not(:placeholder-shown) + .input__label {
+            &:not(.not__floating) {
+                top: -20%;
+                left: 0;
+                font-size: var(--font-size-content);
+                color: var(--color-secondary);
+                opacity: 0.4;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+                -webkit-box-shadow: inset 0 0 0 30px var(--color-primary) !important;
+            }
+        }
+
+        &::placeholder {
+            color: var(--color-secondary);
+        }
+    }
+
+    /* -----------------------------------------------------------------------------------
+Select 
+--------------------------------------------------------------------------------------*/
+
+    .select {
+        --select-padding: 40px;
+        position: relative;
+
+        .input__element {
+            appearance: none;
+            padding-right: var(--select-padding);
+
+            &:invalid {
+                color: var(--color-neutral-dark);
+            }
+        }
+
+        option {
+            background-color: var(--color-white);
+            color: var(--color-black);
+        }
+
+        &::after {
+            --size: 25px;
+            content: '';
+            background: url('../assets/icons/chevron-down.svg') no-repeat 50%
+                50%;
+            background-size: 100%;
+            width: var(--size);
+            height: var(--size);
+
+            position: absolute;
+            top: 5%;
+            right: var(--spacing-xs);
+
+            transform: translateY(50%);
+            pointer-events: none;
+        }
+
+        &:active::after,
+        &:focus-visible::after {
+            transform: translateY(70%);
+        }
+    }
+
+    .montant {
+        --select-padding: 40px;
+        &::after {
+            content: '$';
+            font-weight: 500;
+
+            position: absolute;
+            top: 10%;
+            right: var(--spacing-xs);
+
+            transform: translateY(50%);
+            pointer-events: none;
+        }
+    }
+
+    /* -----------------------------------------------------------------------------------
+Text Area
+--------------------------------------------------------------------------------------*/
+    .textarea {
+        height: 2%;
+
+        .input__element {
+            resize: vertical;
+            padding-top: var(--spacing-md);
+        }
+    }
+
+    /* -----------------------------------------------------------------------------------
+Checkbox + Radio
+--------------------------------------------------------------------------------------*/
+    .checkbox,
+    .radio {
+        --active-scale: 1;
+        .input__element {
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .input__label {
+            --size: 22px;
+            color: var(--color-secondary);
+
+            padding-left: calc(var(--size) + var(--spacing-sm));
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+
+            &::before,
+            &::after {
+                content: '';
+                width: 20px;
+                height: 20px;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: var(--color-neutral-disable);
+                transition: all 0.3 ease-in;
+                border-radius: 100px;
+                border-radius: var(--input-radius);
+            }
+
+            &::after {
+                opacity: 0;
+                transform: scale(0);
+                transition: all 0.4s $ease-out-expo;
+            }
+        }
+
+        .input__element:checked + .input__label {
+            &::after {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        &:focus + .input__label {
+            top: 0 !important;
+            opacity: 0 !important;
+        }
+    }
+
+    .checkbox {
+        .input__label::after {
+            background: url('../assets/icons/confirmation.svg') no-repeat 50%
+                50%;
+            background-size: 70%;
+            background-color: var(--color-action-primary-light);
+        }
+    }
+
+    .radio {
+        .input__label {
+            &::before {
+                border-radius: 100%;
+            }
+
+            &::after {
+                --active-scale: 0.4;
+                background-color: var(--color-action-primary-light);
+                border-radius: 100%;
+            }
+        }
+    }
+
+    /* -----------------------------------------------------------------------------------
+Boutons number
+--------------------------------------------------------------------------------------*/
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type='number'] {
+        -moz-appearance: textfield;
+    }
+    /* Code récupéré sur w3school. Permet d'enlever des flèches sur l'input de type number */
+    /* https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp */
+
+    /* -----------------------------------------------------------------------------------
+Error
+--------------------------------------------------------------------------------------*/
+    .texte-erreur {
+        margin: var(--spacing-xs) 0 0 0;
+        opacity: 0;
+    }
+
+    .error {
+        .input__element,
+        &.check .input__label,
+        &.radio .input__label,
+        .check .input__label,
+        .radio .input__label {
+            border-color: var(--color-action-secondary);
+        }
+
+        .texte-erreur {
+            opacity: 1;
+            font-size: var(--font-size-legende);
+            color: var(--color-action-secondary);
+        }
+
+        .input__label,
+        .input__element:not(:placeholder-shown) + .input__label {
+            color: var(--color-action-secondary);
+
+            & ~ .texte-erreur {
+                opacity: 1;
+                font-size: var(--font-size-legende);
+                color: var(--color-action-secondary);
+            }
+        }
+
+        .label__checkbox,
+        .input__element:not(:placeholder-shown) + .label__checkbox {
+            & ~ .texte-erreur {
+                margin-top: var(--spacing-md);
+            }
+        }
+    }
+}
+
+.form__body {
+    .is-sent & {
+        display: none;
+    }
+}
+
+.form__confirmation {
+    display: none;
+
+    .is-sent & {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        text-align: center;
+
+        p:nth-child(1) {
+            max-width: $breakpoint-sm;
+            margin-bottom: var(--spacing-md);
+        }
+
+        p:nth-child(2) {
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .li {
+            font-weight: 500;
+
+            a {
+                font-weight: 300;
+            }
+        }
+    }
+}

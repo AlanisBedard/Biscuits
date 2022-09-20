@@ -1,0 +1,8 @@
+.debut-formulaire {
+    color: var(--color-secondary);
+    padding: var(--spacing-xl) 0;
+
+    @media screen and (max-width: $breakpoint-sm) {
+        padding: var(--spacing-lg) 0;
+    }
+}

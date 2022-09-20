@@ -1,0 +1,20 @@
+/* ==========================================================================
+   DIMENSIONS / SETTINGS
+   ========================================================================== */
+
+// Valeurs utilisées pour les médias query
+$breakpoint-xs: 420px;
+$breakpoint-sm: 800px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1440px;
+$breakpoint-xl: 1920px;
+
+$breakpoint-main-responsive: 1201px;
+
+:root {
+    --spacing-xs: 5px;
+    --spacing-sm: 15px;
+    --spacing-md: 30px;
+    --spacing-lg: 70px;
+    --spacing-xl: 150px;
+}

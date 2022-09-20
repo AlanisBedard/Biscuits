@@ -1,0 +1,112 @@
+.campagne {
+    color: var(--color-secondary);
+    padding: var(--spacing-xl) 0;
+
+    @media screen and (max-width: $breakpoint-sm) {
+        padding: var(--spacing-lg) 0;
+    }
+
+    h2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .campagne__allcontent {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        position: relative;
+
+        .image-position {
+            position: absolute;
+            display: block;
+            top: 40px;
+            left: 43%;
+            right: 0;
+            bottom: 0;
+            border: 20px solid var(--color-primary);
+            border-right: 0;
+
+            height: 556px;
+            width: 57%;
+
+            @media screen and (max-width: $breakpoint-main-responsive) {
+                top: 20px;
+                height: 260px;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            display: block;
+        }
+    }
+
+    .campagne__content {
+        @media screen and (max-width: $breakpoint-sm) {
+            display: flex;
+        }
+    }
+
+    .campagne__information {
+        position: relative;
+        margin: 630px 0 40px 40px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        ul {
+            margin: 10px 0 30px 0;
+        }
+
+        @media screen and (max-width: $breakpoint-main-responsive) {
+            margin: 300px 0 40px 20px;
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            margin: 40px 0 0 0;
+        }
+
+        .button {
+            position: relative;
+            margin-top: 20px;
+
+            &:before {
+                content: url(../assets/icons/fleche-coeur.svg);
+                position: absolute;
+                top: -60px;
+                left: 450px;
+
+                @media screen and (max-width: 1375px) {
+                    top: -60px;
+                    left: 330px;
+                    transform: scale(0.7);
+                }
+
+                @media screen and (max-width: $breakpoint-md) {
+                    top: -60px;
+                    left: 190px;
+                    transform: scale(0.5);
+                }
+
+                @media screen and (max-width: $breakpoint-xs) {
+                    left: 165px;
+                }
+            }
+
+            @media screen and (max-width: $breakpoint-sm) {
+                align-self: center;
+            }
+        }
+    }
+
+    img {
+        height: 100%;
+        object-fit: cover;
+        @media screen and (max-width: $breakpoint-sm) {
+            height: 400px;
+            width: 90%;
+        }
+    }
+}

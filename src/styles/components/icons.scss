@@ -1,0 +1,63 @@
+/* ==========================================================================
+   icons / component
+   ========================================================================== */
+
+[class^='icon'] {
+    fill: currentColor; // inherit color of its context
+    display: inline-block;
+    flex: 0 0 auto; // prevent icon shrink/grow if in a flex parent
+    height: 1em;
+    vertical-align: middle;
+    width: 1em;
+    stroke: transparent;
+}
+
+.icon--stroke {
+    fill: transparent;
+    stroke: currentColor;
+}
+
+.icon--logo {
+    width: 130px;
+    height: 95px;
+}
+
+.icon--xs {
+    height: 0.75em;
+    width: 0.75em;
+}
+
+.icon--sm {
+    height: 0.8em;
+    width: 0.8em;
+}
+
+.icon--md {
+    height: 1.25em;
+    width: 1.25em;
+}
+
+.icon--lg {
+    height: 1.75em;
+    width: 1.75em;
+
+    @media screen and (max-width: $breakpoint-md) {
+        height: 2.7em;
+        width: 2.7em;
+    }
+}
+
+.icon--xl {
+    height: 2em;
+    width: 2em;
+}
+
+.icon--xxl {
+    height: 3em;
+    width: 3em;
+}
+
+.icon--xxxl {
+    height: 6em;
+    width: 6em;
+}

@@ -1,0 +1,111 @@
+.temoignages {
+    background-color: var(--color-secondary);
+    padding: var(--spacing-xl) 0 calc(var(--spacing-xl) * 1.6) 0;
+
+    @media screen and (max-width: $breakpoint-sm) {
+        padding: var(--spacing-lg) 0 calc(var(--spacing-lg) * 1.6) 0;
+    }
+
+    h2 {
+        margin-bottom: 60px;
+        @media screen and (max-width: $breakpoint-sm) {
+            margin-bottom: 20px;
+        }
+    }
+
+    h3 {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .temoignage {
+        object-fit: cover;
+        height: 100%;
+
+        @media screen and (max-width: $breakpoint-main-responsive) {
+            height: 100px;
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: $breakpoint-main-responsive) {
+        .temoignage__image1 {
+            object-position: 0 60%;
+        }
+
+        .temoignage__image3 {
+            object-position: 0 20%;
+        }
+    }
+
+    .swiper-slide {
+        background: none;
+
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: repeat(1, 500px);
+        align-items: center;
+
+        @media screen and (max-width: $breakpoint-main-responsive) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: var(--color-primary);
+    }
+
+    blockquote {
+        margin: 40px 60px 0 60px;
+        position: relative;
+
+        &::before,
+        &::after {
+            position: absolute;
+
+            font-size: 10em;
+            font-weight: 500;
+            line-height: 0;
+            color: var(--color-light-disable);
+            z-index: -1;
+        }
+
+        &::before {
+            content: open-quote;
+            top: -5%;
+            left: -8%;
+        }
+
+        &::after {
+            content: close-quote;
+            bottom: 15%;
+            right: 0;
+        }
+
+        @media screen and (max-width: $breakpoint-main-responsive) {
+            margin: 40px 20px 0 20px;
+        }
+
+        @media screen and (max-width: 1360px) {
+            &::before {
+                top: 10px;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint-main-responsive) {
+            &::before {
+                top: -3%;
+                left: -2%;
+                z-index: 5;
+            }
+        }
+    }
+
+    .temoignage__signature {
+        font-weight: 500;
+        margin-top: var(--spacing-md);
+    }
+}

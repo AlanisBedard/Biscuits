@@ -1,0 +1,51 @@
+.entete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    p {
+        max-width: 65%;
+        font-weight: 500;
+
+        @media screen and (max-width: $breakpoint-md) {
+            max-width: 100%;
+        }
+    }
+}
+
+.separations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+
+    @media screen and (max-width: $breakpoint-sm) {
+        gap: var(--spacing-md);
+    }
+}
+
+.separation_carousel {
+    padding: 0 80px;
+    @media screen and (max-width: $breakpoint-main-responsive) {
+        padding: 0 40px;
+    }
+    @media screen and (max-width: $breakpoint-xs) {
+        padding: 0 10px;
+    }
+
+    .swiper {
+        margin: 60px 0;
+
+        @media screen and (max-width: $breakpoint-md) {
+            margin: var(--spacing-md) 0;
+        }
+    }
+}
+
+.separation_formulaire {
+    align-self: stretch;
+    margin: 0 40px;
+    margin-top: var(--spacing-md);
+}

@@ -1,0 +1,68 @@
+.swiper-slide {
+    background: var(--color-neutral-light);
+    margin-bottom: var(--spacing-md);
+}
+
+.swiper-wrapper {
+    justify-content: stretch;
+}
+
+.swiper-container {
+    position: relative;
+}
+
+.swiper-pagination {
+    // Variables utilisées par swiper pour la taille des bullets
+    --swiper-pagination-bullet-width: 27px;
+    --swiper-pagination-bullet-height: 27px;
+
+    @media screen and (max-width: $breakpoint-md) {
+        transform: scale(0.7);
+    }
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: -80px;
+
+    @media screen and (max-width: $breakpoint-md) {
+        bottom: -30px;
+    }
+
+    @media screen and (max-width: 500px) {
+        bottom: -10px;
+    }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: var(--color-secondary);
+
+    &::after {
+        display: none;
+    }
+
+    @media screen and (max-width: $breakpoint-md) {
+        transform: scale(0.7);
+    }
+}
+
+.swiper-button-next {
+    right: -70px;
+
+    @media screen and (max-width: $breakpoint-xs) {
+        right: -35px;
+    }
+}
+
+.swiper-button-prev {
+    left: -70px;
+
+    @media screen and (max-width: $breakpoint-xs) {
+        left: -35px;
+    }
+}
+
+.swiper-pagination-bullet {
+    // couleur de la bullet active
+    background: white;
+}

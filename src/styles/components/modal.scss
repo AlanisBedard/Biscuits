@@ -1,0 +1,137 @@
+.modal {
+    @include cover(fixed);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 100;
+
+    .modal-is-active & {
+        opacity: 1;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        a {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+//Permet de mettre un fond fonce
+.modal__scrim {
+    @include cover();
+    background-color: var(--color-black);
+    opacity: 0.3;
+}
+
+//Met le style de la modale
+.modal__box {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+
+    position: relative;
+    padding: 60px;
+    max-width: 60vw;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+
+    @media screen and (max-width: $breakpoint-main-responsive) {
+        max-width: 80vw;
+    }
+
+    .modal-is-active & {
+        opacity: 1;
+    }
+
+    h3 {
+        position: absolute;
+        top: -40px;
+        left: -40px;
+
+        font-family: var(--font-primary);
+        font-size: var(--font-size-content);
+        font-weight: 500;
+        text-transform: uppercase;
+
+        background-color: var(--color-action-primary-opacity);
+        border: var(--spacing-xs) solid var(--color-primary);
+        padding: 22px var(--spacing-lg);
+    }
+
+    @media screen and (max-width: $breakpoint-main-responsive) {
+        padding: 30px;
+
+        h3 {
+            padding: var(--spacing-sm);
+        }
+    }
+}
+
+//Permet de modifer le contenu de la modale
+.modal__content {
+    height: 100%;
+
+    p {
+        margin: var(--spacing-xs) 0 0 0;
+    }
+
+    .modal_informations {
+        p {
+            margin: 0;
+            @media screen and (max-width: $breakpoint-sm) {
+                margin: var(--spacing-sm) 0;
+            }
+        }
+
+        &:nth-child(2) {
+            margin-bottom: var(--spacing-sm);
+        }
+    }
+}
+
+.option-modal {
+    font-weight: 400;
+    padding-left: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3 ease-in;
+    margin-bottom: 10px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+
+        top: 0;
+        left: 0;
+        border-radius: 100px;
+        background-color: var(--color-light-disable);
+        transition: all 0.3 ease-in;
+    }
+
+    &:hover {
+        color: inherit;
+        &::before {
+            background-color: var(--color-primary);
+            opacity: 0.6;
+        }
+    }
+
+    &:active,
+    &:focus {
+        color: inherit;
+        &::before {
+            background-color: var(--color-primary);
+        }
+    }
+}
+
+//Il est impossible de naviger dans le site lorsque la modale est active
+.modal-is-active body {
+    overflow: hidden;
+}

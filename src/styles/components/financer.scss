@@ -1,0 +1,14 @@
+.financer {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-secondary);
+    display: flex;
+    justify-content: center;
+
+    @media screen and (max-width: $breakpoint-sm) {
+        padding: var(--spacing-lg) 0;
+    }
+
+    h2 {
+        margin-bottom: var(--spacing-sm);
+    }
+}

@@ -1,0 +1,269 @@
+{% include '_partials/_header.html' with {title : "Formulaire - Recettes en pot" } %}
+
+<section class="formulaire">
+    <div class="wrapper separations">
+        <!-- Le formulaire -->
+        <form action="" class="form separation_formulaire" autocomplete="off" data-component="Form">
+            <div class="form__body">
+                <div class="entete">
+                    <h2>Créer ma<span class="surligne style-surligne3">campagne</span></h2>
+                    <p>
+                        En remplissant ce formulaire, vous pourrez débuter votre aventure en tant qu’entrepreneur de
+                        changement.
+                    </p>
+                </div>
+                <fieldset>
+                    <div class="form__complet">
+                        <h3>Vos informations</h3>
+                        <div class="grid">
+                            <div class="input">
+                                <input
+                                    class="input__element"
+                                    type="text"
+                                    name="fname"
+                                    id="fname"
+                                    placeholder=" "
+                                    required
+                                />
+                                <label class="input__label" for="fname">Prénom</label>
+                                <p class="texte-erreur">Veillez écrire votre prénom</p>
+                            </div>
+
+                            <div class="input">
+                                <input
+                                    class="input__element"
+                                    type="text"
+                                    name="lanme"
+                                    id="lname"
+                                    placeholder=" "
+                                    required
+                                />
+                                <label class="input__label" for="lname">Nom</label>
+                                <p class="texte-erreur">Veillez écrire votre nom</p>
+                            </div>
+
+                            <div class="input">
+                                <input
+                                    class="input__element"
+                                    type="tel"
+                                    name="phone"
+                                    id="phone"
+                                    placeholder=" "
+                                    pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
+                                    required
+                                />
+
+                                <label class="input__label" for="phone">Téléphone ex.: (613)555-0183</label>
+                                <p class="texte-erreur">Veillez bien écrire votre numéro de téléphone</p>
+
+                                <! -- Pattern précedent permet à l'utilisateur d'écrire de la façon qu'il veut sont numéro de téléphone -- >
+                                <! -- Voir : https://stackoverflow.com/questions/16699007/regular-expression-to-match-standard-10-digit-phone-number -- >
+                            </div>
+
+                            <div class="input">
+                                <input
+                                    class="input__element"
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    placeholder=" "
+                                    required
+                                />
+                                <label class="input__label" for="email">Adresse courriel (courriel@exemple.com)</label>
+                                <p class="texte-erreur">Veillez bien écrire votre adresse courriel</p>
+                            </div>
+
+                            <div>
+                                <p>Quelle méthode de contact préférez-vous?</p>
+                                <div class="form__list" data-input-container>
+                                    <div class="input radio">
+                                        <input
+                                            class="input__element"
+                                            type="radio"
+                                            name="methode-contact[]"
+                                            id="tel-choix"
+                                            value="tel-choix"
+                                            required
+                                        />
+                                        <label class="input__label not__floating" for="tel-choix">Téléphone</label>
+                                    </div>
+
+                                    <div class="input radio">
+                                        <input
+                                            class="input__element"
+                                            type="radio"
+                                            name="methode-contact[]"
+                                            id="email-choix"
+                                            value="email-choix"
+                                            required
+                                        />
+                                        <label class="input__label not__floating" for="email-choix"
+                                            >Adresse courriel</label
+                                        >
+                                    </div>
+                                    <p class="texte-erreur">Veillez choisir votre préférence</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__complet">
+                        <h3>Informations de votre campagne</h3>
+                        <div class="grid grid-layout">
+                            <div class="input">
+                                <input
+                                    class="input__element"
+                                    type="text"
+                                    name="Oname"
+                                    id="Oname"
+                                    placeholder=" "
+                                    required
+                                />
+                                <label class="input__label" for="Oname">Nom de l’organisation</label>
+                                <p class="texte-erreur">Veillez écrire le nom de l'organisation</p>
+                            </div>
+
+                            <div class="input select">
+                                <select class="input__element" name="Otype" id="Otype" placeholder=" " required>
+                                    <option value="" hidden>Choisir</option>
+                                    <option value="ecole">École</option>
+                                    <option value="club-sportif">Club sportif</option>
+                                    <option value="petite-enfance">Petite Enfance</option>
+                                    <option value="fondation">Fondation</option>
+                                    <option value="organisme">Organisme</option>
+                                    <option value="association">Association</option>
+                                    <option value="entreprise-privee">Entreprise privée</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+
+                                <label class="input__label" for="Otype">Type d’organisation</label>
+                                <p class="texte-erreur">Veillez choisir un type d'organisation</p>
+                            </div>
+
+                            <div class="input montant">
+                                <input
+                                    class="input__element"
+                                    type="number"
+                                    name="argent"
+                                    id="argent"
+                                    placeholder=" "
+                                    required
+                                />
+                                <label class="input__label" for="argent">Montant visé par la campagne</label>
+                                <p class="texte-erreur">Veillez écrire un montant</p>
+                            </div>
+
+                            <div class="input select">
+                                <select class="input__element" name="statut" id="statut" placeholder=" " required>
+                                    <option value="" hidden>Choisir</option>
+                                    <option value="ecole">Normal</option>
+                                    <option value="club-sportif">Urgent</option>
+                                </select>
+
+                                <label class="input__label" for="statut">Statut de la campagne</label>
+                                <p class="texte-erreur">Veillez choisir un statut</p>
+                            </div>
+
+                            <div class="input">
+                                <input
+                                    class="input__element"
+                                    type="date"
+                                    name="debut"
+                                    id="debut"
+                                    placeholder=" "
+                                    min=""
+                                    max="2050-12-31"
+                                    onfocus="this.min=new Date().toISOString().split('T')[0]"
+                                    required
+                                />
+
+                                <! -- Code de onfocus retrouver sur ce site web pour limiter le début de la campagne à la date d'aujoud'hui -- >
+                                <! -- https://stackoverflow.com/questions/32378590/set-date-input-fields-max-date-to-today -->
+
+                                <label class="input__label" for="debut">Début de la campagne</label>
+                                <p class="texte-erreur">Veillez choisir une date de début</p>
+                            </div>
+
+                            <div class="input">
+                                <input
+                                    class="input__element"
+                                    type="date"
+                                    name="fin"
+                                    id="fin"
+                                    placeholder=" "
+                                    min=""
+                                    max="2050-12-31"
+                                    onfocus="this.min=new Date().toISOString().split('T')[0]"
+                                    required
+                                />
+
+                                <! -- Code de onfocus retrouver sur ce site web pour limiter le début de la campagne à la date d'aujoud'hui -- >
+                                <! -- https://stackoverflow.com/questions/32378590/set-date-input-fields-max-date-to-today -->
+
+                                <label class="input__label" for="fin">Fin de la campagne</label>
+                                <p class="texte-erreur">Veillez choisir une date de fin</p>
+                            </div>
+
+                            <div class="input textarea u-grid-fullwidth">
+                                <textarea
+                                    class="input__element"
+                                    name="comment"
+                                    maxlength="500"
+                                    id="comment"
+                                    placeholder=" "
+                                ></textarea
+                                ><label class="input__label" for="comment"
+                                    >Description de la campagne (Facultatif)</label
+                                >
+                            </div>
+
+                            <div class="input checkbox">
+                                <input
+                                    class="input__element"
+                                    type="checkbox"
+                                    name="conditions[]"
+                                    id="conditions"
+                                    placeholder=" "
+                                    value="true"
+                                    required
+                                />
+                                <label class="input__label not__floating label__checkbox" for="conditions"
+                                    >J'accepte les termes et conditions de Recettes en pot</label
+                                >
+                                <p class="texte-erreur">Veillez cocher la case et accepter les conditions</p>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form__footer">
+                    <button class="button button__grand">Soumettre</button>
+                    <a href="index.html" class="button button__petit">Annuler le formulaire</a>
+                </div>
+            </div>
+
+            <div class="form__confirmation">
+                <h2>Créer ma<span class="surligne style-surligne3">campagne</span></h2>
+                <svg class="icon icon--xl">
+                    <use xlink:href="#icon-confirmation"></use>
+                </svg>
+
+                <div class="contenu_formualire_fin">
+                    <p>
+                        Merci de votre enthousiasme! Un membre de notre équipe vous contactera selon votre préférence
+                        pour finaliser votre campagne.
+                    </p>
+                    <p>Si vous avez des questions, contactez nous par :</p>
+
+                    <ul>
+                        <li>Email : <a href="mailto:recettesenpot@hotmail.com">recettesenpot@hotmail.com</a></li>
+                        <li>Téléphone : <a href="tel:1-844-732-3883">1-844-732-3883</a></li>
+                    </ul>
+                </div>
+
+                <a href="index.html" class="button button__petit">Retour à la page d’Accueil</a>
+            </div>
+        </form>
+    </div>
+</section>
+{ } {% include '_partials/_footer.html' %}
