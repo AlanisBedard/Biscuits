@@ -65,7 +65,7 @@ export default class Carousel {
       this.varianteNavigation = {
         navigation: {
           nextEl: this.element.parentNode.querySelector('.swiper-button-next'),
-          prevEl: this.element.querySelector('.swiper-button-prev'),
+          prevEl: this.element.parentNode.querySelector('.swiper-button-prev'),
         },
       };
     }
