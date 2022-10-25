@@ -58,22 +58,34 @@
 
     .statu {
         position: absolute;
-        top: 45%;
+        top: 43%;
         left: 0;
         background-color: var(--color-secondary);
         padding: var(--spacing-xs) var(--spacing-sm);
         font-weight: 300;
 
-        @media screen and (max-width: $breakpoint-md) {
+        @media screen and (max-width: 1104px) {
             top: 40%;
         }
 
-        @media screen and (max-width: $breakpoint-sm) {
-            top: 27%;
+        @media screen and (max-width: 944px) {
+            top: 37%;
+        }
+
+        @media screen and (max-width: 800px) {
+            top: 26%;
         }
 
         @media screen and (max-width: 710px) {
-            top: 140px;
+            top: 33%;
+        }
+
+        @media screen and (max-width: 560px) {
+            top: 31%;
+        }
+
+        @media screen and (max-width: 450px) {
+            top: 26%;
         }
     }
 
