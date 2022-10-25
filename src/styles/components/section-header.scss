@@ -8,6 +8,7 @@
     p {
         max-width: 65%;
         font-weight: 500;
+        margin-bottom: 60px;
 
         @media screen and (max-width: $breakpoint-md) {
             max-width: 100%;

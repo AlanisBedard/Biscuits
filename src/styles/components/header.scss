@@ -27,12 +27,13 @@
     }
 
     .header__brand {
-        color: var(--color-black);
+        width: 80px;
+        height: 100%;
     }
 }
 
 .entete-navigation-principale {
-    padding: var(--spacing-md) 0;
+    padding: var(--spacing-sm) 0;
     color: var(--color-secondary);
 
     @media screen and (max-width: $breakpoint-main-responsive) {

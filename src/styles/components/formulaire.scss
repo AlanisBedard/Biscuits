@@ -1,7 +1,11 @@
 .formulaire {
-    margin-top: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
     padding: var(--spacing-xl) 0;
     color: var(--color-secondary);
+
+    @media screen and (max-width: $breakpoint-main-responsive) {
+        margin-top: var(--spacing-md);
+    }
 
     @media screen and (max-width: $breakpoint-sm) {
         padding: var(--spacing-lg) 0;
