@@ -1,4 +1,4 @@
-# Travail pratique #3 - Refonte d'un site web - Recettes en Pot
+# Travail pratique #3 - Refonte d'un site web - Biscuits
 
 Voici le projet final de mon cours de web 4. J'ai créé le design avec une palette de couleur et un style imposé sur Figma. N'hésitez pas à regarder mon code!
 
