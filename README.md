@@ -1,12 +1,6 @@
-# Travail pratique #3 - Recettes en pot
+# Travail pratique #3 - Refonte d'un site web - Recettes en Pot
 
-Voici le dossier de base pour la réalisation du travail pratique #3.
-Les gabarits _header.html et _footer.html se trouvant dans le dossier _partials sont utilisés.
-
-## Informations
-
-Toutes les informations en lien avec le TP sont disponible sur le Classroom.
-
+Voici le projet final de mon cours de web 4. J'ai créé le design avec une palette de couleur et un style imposé sur Figma. N'hésitez pas à regarder mon code!
 
 
 <br><br><br><hr>
